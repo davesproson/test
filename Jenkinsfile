@@ -4,11 +4,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 retry(3) {
-                    sh 'echo "hello"'
+                    sh '[ -d /home/ec2-user/deploy ] || mkdir /home/ec2-user/deploy'
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
-                    sh 'echo "goodbye"'
+                    sh 'cp * home/ec2-user/deploy'
                 }
             }
         }
