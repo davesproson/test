@@ -8,7 +8,7 @@ pipeline {
                 }
 
                 timeout(time: 3, unit: 'MINUTES') {
-                    sh 'cp * home/ec2-user/deploy'
+                    sh 'cp * /home/ec2-user/deploy'
                 }
             }
         }
